@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Verificar se a URI do MongoDB está definida
 const mongoUri = process.env.MONGOURI;
