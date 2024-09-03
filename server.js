@@ -9,12 +9,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 
-// Configurar CORS para permitir solicitações da origem específica
-const corsOptions = {
-  origin: 'https://form-psind.vercel.app', // Substitua pelo seu domínio
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
+
 app.use(cors(corsOptions));
 
 // Verificar se a URI do MongoDB está definida
