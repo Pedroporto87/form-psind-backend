@@ -15,7 +15,7 @@ const formSchema = new mongoose.Schema({
   orgaoEfetivo: { type: [String] }, // Array de strings
   orgaoTemporario: { type: [String] }, // Array de strings
   prestacaoServico: { type: [String] }, // Array de strings
-  terceirizadoEmpresa: { type: String },
+  terceirizadoEmpresa: { type: [String] },
   cooperativaNome: { type: [String] },
   outrosRegime: { type: [String] },
   sugestoes: { type: String, required: true }
