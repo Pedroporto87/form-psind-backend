@@ -6,6 +6,11 @@ exports.createForm = async (req, res) => {
   try {
     const { nome, email, crp } = req.body;
 
+    const crpRegex = /^\d{6}$/;
+    if (!crpRegex.test(crp)) {
+      return res.status(400).send({ message: 'O CRP deve conter exatamente 6 números.' });
+    }
+
     // Verificar se o formulário já existe
     const existingForm = await Form.findOne({ nome, email, crp });
     if (existingForm) {
