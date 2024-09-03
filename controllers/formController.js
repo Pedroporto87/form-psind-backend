@@ -8,7 +8,7 @@ exports.createForm = async (req, res) => {
 
     const crpRegex = /^\d{7}$/;
     if (!crpRegex.test(crp)) {
-      return res.status(400).send({ message: 'O CRP deve conter exatamente 6 números.' });
+      return res.status(400).send({ message: 'O CRP deve conter exatamente 7 números.' });
     }
 
     // Verificar se o formulário já existe
