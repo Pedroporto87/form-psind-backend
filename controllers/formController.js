@@ -17,7 +17,7 @@ exports.createForm = async (req, res) => {
     await form.save();
     res.status(201).send(form);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send({ message: 'Formulário já enviado anteriormente.' });
   }
 };
 
