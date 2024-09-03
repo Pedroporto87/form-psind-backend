@@ -4,6 +4,15 @@ const Form = require('../models/Form.js');
 // Criar um novo formulário (POST)
 exports.createForm = async (req, res) => {
   try {
+    const { nome, email, crp } = req.body;
+
+    // Verificar se o formulário já existe
+    const existingForm = await Form.findOne({ nome, email, crp });
+    if (existingForm) {
+      return res.status(400).send({ message: 'Formulário já enviado anteriormente.' });
+    }
+
+    // Criar um novo formulário
     const form = new Form(req.body);
     await form.save();
     res.status(201).send(form);
