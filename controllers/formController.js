@@ -6,7 +6,7 @@ exports.createForm = async (req, res) => {
   try {
     const { nome, email, crp } = req.body;
 
-    const crpRegex = /^\d{6}$/;
+    const crpRegex = /^\d{7}$/;
     if (!crpRegex.test(crp)) {
       return res.status(400).send({ message: 'O CRP deve conter exatamente 6 números.' });
     }
